@@ -38,7 +38,7 @@ A production-ready **Retrieval-Augmented Generation (RAG)** chatbot built with *
 
 ## 📁 Project Structure
 
-
+```
 ChatBot/ 
 ├── logs/                          # All logs stored here
 │   └── app.log                    # Rotating file logs (DEBUG + INFO)
@@ -47,9 +47,8 @@ ChatBot/
 │
 ├── src/
 │   └── chatbot/
-│       ├── api/                    # FastAPI Application
-│       │
-│       │   ├── db.py            # MongoDB connection (logger replaces prints)
+│       ├── api/                   # FastAPI Application
+│       │   ├── db.py              # MongoDB connection (logger replaces prints)
 │       │   ├── schemas.py         # Pydantic models
 │       │   ├── routes/
 │       │   │   └── chat.py        # Chat endpoints (logger optional for requests/errors)
@@ -77,19 +76,20 @@ ChatBot/
 ├── .env                           # Environment variables
 ├── requirements.txt               # Dependencies
 └── README.md                      # Documentation
+```
 
 ---
 
 ## 🚀 Quick Start
 
-### 1. **Prerequisites**
+### 1. Prerequisites
 
 - Python 3.9+
 - MongoDB Atlas account
 - Pinecone account
 - Groq API key
 
-### 2. **Installation**
+### 2. Installation
 
 ```bash
 # Clone the repository
@@ -109,13 +109,13 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 3. **Environment Setup**
+### 3. Environment Setup
 
 Create a `.env` file in the project root:
 
 ```env
 # MongoDB Configuration
-MONGO_URI= Mongo_URI
+MONGO_URI=Mongo_URI
 
 # Pinecone Configuration
 PINECONE_API_KEY=your_pinecone_api_key
@@ -131,7 +131,7 @@ EMBEDDING_MODEL_NAME=all-MiniLM-L6-v2
 DATA_PATH=./data
 ```
 
-### 4. **Document Ingestion**
+### 4. Document Ingestion
 
 Place your PDF files in the `data/` folder, then run:
 
@@ -145,7 +145,7 @@ This will:
 - Generate embeddings
 - Upload to Pinecone vector database
 
-### 5. **Run the Application**
+### 5. Run the Application
 
 #### Option A: FastAPI Server
 
@@ -171,7 +171,7 @@ python gradio_ui.py
 
 ### Endpoints
 
-#### 1. **Health Check**
+#### 1. Health Check
 ```http
 GET /
 ```
@@ -182,7 +182,7 @@ GET /
 }
 ```
 
-#### 2. **Create/Update Chat**
+#### 2. Create/Update Chat
 ```http
 POST /chat/create
 Content-Type: application/json
@@ -210,7 +210,7 @@ Content-Type: application/json
 }
 ```
 
-#### 3. **Get Chat History**
+#### 3. Get Chat History
 ```http
 GET /chat/{session_id}
 ```
@@ -223,7 +223,7 @@ GET /chat/{session_id}
 }
 ```
 
-#### 4. **Delete Chat**
+#### 4. Delete Chat
 ```http
 DELETE /chat/{session_id}
 ```
@@ -477,5 +477,4 @@ For issues and questions:
 
 Made with ❤️ by [Talha Rehman](https://github.com/TalhaRehmanMalik)
 
-</div>#   R a g - C h a t B o t  
- 
+</div>
